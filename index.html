@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沏茶问题 - 时间管理学习</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍵 沏茶问题 - 合理安排时间</h1>
+            <p class="subtitle">通过拖拽任务卡片，学习如何优化时间安排，让客人尽快喝上茶！</p>
+        </header>
+
+        <div class="instructions">
+            <h2>📋 任务说明</h2>
+            <p>小明需要完成以下6个任务来为客人沏茶。请将这些任务拖拽到下方的流程图中，合理安排顺序。</p>
+            <p class="hint">💡 提示：可以同时进行的任务可以放在同一行！</p>
+        </div>
+
+        <div class="task-pool">
+            <h3>任务池（拖拽到下方流程图）</h3>
+            <div class="task-list" id="taskPool">
+                <div class="task-card" draggable="true" data-task="洗水壶" data-time="1">
+                    <div class="task-icon" id="icon-洗水壶"></div>
+                    <span class="task-name">洗水壶</span>
+                    <span class="task-time">1分钟</span>
+                </div>
+                <div class="task-card" draggable="true" data-task="接水" data-time="1">
+                    <div class="task-icon" id="icon-接水"></div>
+                    <span class="task-name">接水</span>
+                    <span class="task-time">1分钟</span>
+                </div>
+                <div class="task-card" draggable="true" data-task="烧水" data-time="8">
+                    <div class="task-icon" id="icon-烧水"></div>
+                    <span class="task-name">烧水</span>
+                    <span class="task-time">8分钟</span>
+                </div>
+                <div class="task-card" draggable="true" data-task="找茶叶" data-time="1">
+                    <div class="task-icon" id="icon-找茶叶"></div>
+                    <span class="task-name">找茶叶</span>
+                    <span class="task-time">1分钟</span>
+                </div>
+                <div class="task-card" draggable="true" data-task="洗茶杯" data-time="2">
+                    <div class="task-icon" id="icon-洗茶杯"></div>
+                    <span class="task-name">洗茶杯</span>
+                    <span class="task-time">2分钟</span>
+                </div>
+                <div class="task-card" draggable="true" data-task="沏茶" data-time="1">
+                    <div class="task-icon" id="icon-沏茶"></div>
+                    <span class="task-name">沏茶</span>
+                    <span class="task-time">1分钟</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flowchart-section">
+            <div class="flowchart-header">
+                <h3>流程图（拖拽任务到这里，可以添加多个步骤）</h3>
+                <button class="add-step-btn" onclick="addFlowchartStep()">➕ 添加步骤</button>
+            </div>
+            <div class="flowchart-container">
+                <div class="flowchart" id="flowchart">
+                    <!-- 步骤将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="time-display">
+                <h3>⏱️ 总时间：<span id="totalTime">0</span> 分钟</h3>
+            </div>
+            <div class="feedback" id="feedback"></div>
+            <button class="reset-btn" onclick="resetFlowchart()">🔄 重新开始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
